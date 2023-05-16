@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+<html lang="ko"
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{ layouts/default_layout }"> <!-- 적용할 layout 설정 -->
+<!-- private css -->
+<th:block layout:fragment="css"></th:block>
+<!-- private script -->
+<th:block layout:fragment="script"></th:block>
+<!-- Content -->
+<div layout:fragment="content">
+    <h1 class="">Contents Area</h1>
+</div>
 </html>

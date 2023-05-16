@@ -14,19 +14,21 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-            .cors(cors -> cors.disable())
-            .authorizeHttpRequests(request -> 
+        http
+			.csrf(csrf -> csrf.disable())
+			.cors(cors -> cors.disable())
+			.authorizeHttpRequests(request -> 
 	            request
 	                .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
 	                .anyRequest().authenticated()
             )
             .formLogin(login -> 
             		login
-		            .loginPage("/user/signIn")						// [A] 커스텀 로그인 페이지 지정
+//            			.loginPage("/user/signIn")						// [A] 커스텀 로그인 페이지 지정
+            			.loginPage("/")
 		            .loginProcessingUrl("/login-process")				// [B] submit 받을 URL
-		            .usernameParameter("userId")						// [C] submit할 ID
-		            .passwordParameter("password")					// [D] submit할 비밀번호
+		            .usernameParameter("userId")						// [C] username를 대체할 이름 설정
+//		            .passwordParameter("password")					// [D] password를 대체할 이름 설정 | 기본값 = password
 		            .defaultSuccessUrl("/view/dashboard", true) 		// [F] 성공시 이동할 URL
 		            .permitAll()
             )
