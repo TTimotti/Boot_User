@@ -15,11 +15,12 @@
 	        <div class="row gx-4 gx-lg-5 justify-content-center">
 	            <div class="col-md-12 col-lg-8 col-xl-7">
 	                <div class="site-heading">
-	                    <form th:action="@{ /signIn/insert }" method="post" >
+	                    <form th:action="@{ /user/signUp/insert }" method="post">
 		                    <div class="form-group d-flex flex-column justify-content-center align-items-center">
 							  <input type="text" class="form-control mt-4" placeholder="ID" id="userId" name="userId" style="background-color: black;opacity: 0.5; color: white;">
-							  <input type="password" class="form-control mt-4" placeholder="PW" id="password" name="password" style="background-color: black; opacity: 0.5; color: white;">
-							  <button type="submit" class="btn btn-success mt-4">Sign In</button>
+							  <input type="text" class="form-control mt-4" placeholder="NAME" id="userName" name="userName" style="background-color: black;opacity: 0.5; color: white;">
+							  <input type="password" class="form-control mt-4" placeholder="PASSWORD" id="password" name="password" style="background-color: black; opacity: 0.5; color: white;">
+							  <button type="submit" class="btn btn-success mt-4">Sign Up</button>
 							</div>							
 	                    </form>
 	                </div>

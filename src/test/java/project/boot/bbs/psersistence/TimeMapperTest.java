@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import lombok.extern.slf4j.Slf4j;
-import project.boot.bbs.mapper.TimeMapper;
+import project.boot.bbs.mapper.UserMapper;
 
 @Slf4j
 @SpringBootTest
 public class TimeMapperTest {
 
     @Autowired
-    private TimeMapper timeMapper;
+    private UserMapper timeMapper;
 
     @Test
     public void testGetTime() {
