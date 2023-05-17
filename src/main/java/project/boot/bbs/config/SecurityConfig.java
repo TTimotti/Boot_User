@@ -20,6 +20,7 @@ public class SecurityConfig {
 			.authorizeHttpRequests(request -> 
 	            request
 	                .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
+	                .requestMatchers("/status", "/assets/**", "/user/siginIn", "/user/signUp", "/css/**", "/js/**", "/images/**").permitAll()
 	                .anyRequest().authenticated()
             )
             .formLogin(login -> 
