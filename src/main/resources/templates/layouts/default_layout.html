@@ -20,13 +20,10 @@
 <!-- content css -->
 <th:block layout:fragment="css"></th:block>
 </head>
-<body class="container-xxl">	
+<body>	
 	<!-- 공통 nav -->
 	<th:block th:replace="~{ fragments/nav :: navFragment }"></th:block>
 	
-	<!-- 공통 header -->
-	<th:block th:replace="~{ fragments/header :: headerFragment }"></th:block>
-
 	<!-- content Area -->
 	<th:block layout:fragment="content"></th:block>
 	

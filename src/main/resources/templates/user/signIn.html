@@ -3,12 +3,29 @@
 	  xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{ layouts/default_layout }"> <!-- 적용할 layout 설정 -->
+      layout:decorate="~{ layouts/user_layout }"> <!-- 적용할 layout 설정 -->
 <!-- private css -->
 <th:block layout:fragment="css"></th:block>
 <!-- private script -->
 <th:block layout:fragment="script"></th:block>
 <!-- Content -->
 <div layout:fragment="content">
+	<header style="margin-top: 27vh">
+		<div class="container px-4 px-lg-5">
+	        <div class="row gx-4 gx-lg-5 justify-content-center">
+	            <div class="col-md-12 col-lg-8 col-xl-7">
+	                <div class="site-heading">
+	                    <form action="" >
+		                    <div class="form-group d-flex flex-column justify-content-center align-items-center">
+							  <input type="text" class="form-control mt-4" placeholder="ID" id="userId" name="userId" style="background-color: black; opacity: 0.5; color: white;">
+							  <input type="text" class="form-control mt-4" placeholder="PW" id="password" name="password" style="background-color: black; opacity: 0.5; color: white;">
+							  <button type="submit" class="btn btn-success mt-4">Sign In</button>
+							</div>							
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</header>
 </div>
 </html>
