@@ -3,6 +3,7 @@ package project.boot.bbs.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,7 @@ public class UserController {
 	}
 	
 	@PostMapping(value = "/signUp/insert")
-	public String signUpInsert(SignUpDTO dto) {
+	public String signUpInsert(@RequestBody SignUpDTO dto) {
 		log.info("signUpDto={}", dto);
 		userService.insertUser(dto);
 		
