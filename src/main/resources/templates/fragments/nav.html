@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
 <!--navFragment 선언-->
 <div th:fragment="navFragment">
 	<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -14,7 +15,8 @@
 	                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" th:href="@{ /post/about }">About</a></li>
 	                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" th:href="@{ /post/list }">Posts</a></li>
 	                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" th:href="@{ /contact }">Contact</a></li>
-	                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" th:href="@{ /user/signIn }">Sign In</a></li>
+	                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" th:href="@{ /user/signIn }" sec:authorize="isAnonymous()">Sign In</a></li>
+	                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" th:href="@{ /logout }" sec:authorize="!isAnonymous()">Logout</a></li>
 	            </ul>
 	        </div>
 	    </div>

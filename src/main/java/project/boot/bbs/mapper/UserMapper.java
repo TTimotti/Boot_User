@@ -1,17 +1,12 @@
 package project.boot.bbs.mapper;
 
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Mapper;
 
 import project.boot.bbs.entity.UserEntity;
 
-import org.apache.ibatis.annotations.Mapper;
-
 @Mapper
-public interface UserMapper {
-
-    @Select("select sysdate from dual")
-    public String getTime();
-    
-    public UserEntity selectUserByUserId();
+public interface UserMapper {   
     public int insertUser(UserEntity entity);
+    
+    public UserEntity selectUserByUserId(String userId);
 }
